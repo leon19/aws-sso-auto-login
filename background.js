@@ -61,7 +61,7 @@ async function checkAndLogin(tabId) {
                 allowButton.click();
                 console.log('Clicked on Allow access button');
 
-                await waitForElement(() => document.querySelector('.awsui-context-alert')?.textContent.toLocaleLowerCase().startsWith('request appro'));
+                await waitForElement(() => document.querySelector('.awsui-context-alert')?.textContent.toLocaleLowerCase().startsWith('request approved'));
 
                 chrome.runtime.sendMessage({ action: 'closeTab', tabId: tabId });
             }
